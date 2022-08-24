@@ -8,7 +8,7 @@
         dark:bg-purple-900 overflow-hidden">
             <div class="w-full lg:w-5/6">
                 <div class="bg-purple-300  dark:bg-purple-800 shadow-md rounded my-6">
-                    <table class="min-w-max w-full table-auto rounded-lg">
+                    <table class="min-w-max w-full table-auto rounded-lg" >
                         <thead>
                             <tr class="bg-violet-900 dark:bg-violet-300  uppercase text-md leading-normal text-purple-200 dark:text-purple-900">
                                 <th class="py-3 px-6 text-left">ID</th>
@@ -18,7 +18,7 @@
                             </tr>
                         </thead>
                         <tbody class="text-purple-900 dark:text-gray-200 text-md font-light" 
-                          :key="time.id" v-for="time in alltimes">
+                          :key="time.id" v-for="time in alltimes" >
                           <!-- // v-for="(post, index) in posts" :key="index"> -->
                             <tr class="border-b border-gray-200 hover:bg-purple-500">
                                 <td class="py-3 px-6 text-left whitespace-nowrap">
@@ -43,8 +43,8 @@
                                
                                 <td class="py-3 px-6 text-center">
                                     <div class="flex item-center justify-center">
-                                        <router-link :to="{ name: 'timeedit'}">
-                                         <button :key="time.id"  @click="edit(time)" class="w-6 mr-2 transform hover:text-purple-300 hover:scale-110" >
+                                        <router-link :to="{ name: 'timeedit', params:{time}}">
+                                         <button  class="w-6 mr-2 transform hover:text-purple-300 hover:scale-110" >
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                             </svg>
@@ -113,25 +113,12 @@
 
         })
     },
-    edit(time) {
-        console.log(time)
-        
-    // if (this.starttime.trim().length == 0 || this.endtime.trim().length == 0) {
-    //     return
-    // }
-    // const time = {
-    //     id: this.id,
-    //     starttime: this.starttime,
-    //     endtime: this.endtime,
-    //     successMessage :'Time Updated Successfully!',
-    // };
-    // this.update(time);
-    },
+    
    },
     created() {
         this.index()
+
     },
-    
     
     computed:mapGetters('time', {alltimes: "alltimes"}),
    
