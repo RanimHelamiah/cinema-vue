@@ -1,6 +1,6 @@
 <template>
      <form @submit.prevent="add" class="mb-2 mt-4">
-        <div v-if="successMessage" class="success-message text-purple-900">{{ successMessage }}</div>
+        <div v-if="successMessage" class="success-message text-purple-900 darek:text-gray-100">{{ successMessage }}</div>
         <input type="time"  placeholder="write the starttime"  
           style="width:250px;border-radius:6px;
 		  border-width:2px;border-color:#340b56;"     
@@ -33,11 +33,11 @@ export default {
             if (this.starttime.trim().length == 0 || this.endtime.trim().length == 0) {
                 return
             }
-            const project = {
+            const time = {
                 'starttime': this.starttime,
                 'endtime': this.endtime,
             }
-            this.store(project)
+            this.store(time)
             this.starttime=""
             this.endtime=""
             this.successMessage = 'Time Created Successfully!'

@@ -6,6 +6,7 @@ axios.defaults.baseURL = 'http://127.0.0.1:8000/api'
 export const time ={
     namespaced: true,
     state: {
+        time:[],
         signedin:localStorage.getItem('access_token')?true:false
       },
 
@@ -50,7 +51,7 @@ export const time ={
               context.commit('store', response.data.data);
           },
           async update( context, time) {
-              const response = await axios.put('/Time/update/'+time.id);
+              const response = await axios.put('/Time/update/'+time, time);
               // console.log(response.data.data);
               context.commit('update', response.data.data);
           },

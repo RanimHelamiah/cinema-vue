@@ -7,6 +7,7 @@ import logout from "../components/Auth/logout.vue";
 import Register from "../components/Auth/Register.vue";
 import Dashboard from "../views/Dashboard.vue";
 import timeindex from "../views/Admin/Time/index.vue";
+import timeedit from "../views/Admin/Time/edit.vue";
 import movieindex from "../views/Admin/Movie/index.vue";
 import roleindex from "../views/Admin/RolePer/index.vue";
 // Component Pages
@@ -46,6 +47,15 @@ const routes = [
     component: timeindex,
     meta: { 
       title: "timeindex " + appname,
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/Time/edit/:time",
+    name: "timeedit",
+    component: timeedit,
+    meta: { 
+      title: "timeedit " + appname,
       requiresAuth: true,
     },
   },

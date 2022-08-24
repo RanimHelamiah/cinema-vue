@@ -24,7 +24,6 @@
   import Dashboard from "@/views/Dashboard";
   import timeindex from "@/views/Admin/Time/index.vue";
   import movieindex from "@/views/Admin/Movie/index.vue";
-  import roleindex from "@/views/Admin/RolePer/index.vue";
   // npm-js
   import Scrollbar from "smooth-scrollbar";
   export default {
@@ -37,7 +36,6 @@
       Dashboard,
       timeindex,
       movieindex,
-      roleindex,
     },
 
     mounted() {
