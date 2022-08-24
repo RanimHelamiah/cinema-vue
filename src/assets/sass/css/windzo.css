@@ -1,0 +1,10 @@
+.item .exact-active {
+  background: #3a034d;
+  color: #f2f2f2;
+}
+.item .exact-active:hover {
+  background: #15011b !important;
+  color: #f2f2f2;
+}
+
+/*# sourceMappingURL=windzo.css.map */
