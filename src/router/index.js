@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from "vue-router";
-
 // Default Pages
 import LandingPage from "../components/Marketing/LandingPage.vue";
 // import about from "../components/Marketing/about.vue";
@@ -10,18 +9,14 @@ import Dashboard from "../views/Dashboard.vue";
 import timeindex from "../views/Admin/Time/index.vue";
 import movieindex from "../views/Admin/Movie/index.vue";
 import roleindex from "../views/Admin/RolePer/index.vue";
-
 // Component Pages
 import Valert from "../views/components/alert.vue";
 import Vaccrodion from "../views/components/accordion.vue";
 import Vbadges from "../views/components/badges.vue";
 import Vbreadcumb from "../views/components/breadcumbs.vue";
 import Vbutton from "../views/components/button.vue";
-import Vcard from "../views/components/card.vue"
-
+import Vcard from "../views/components/card.vue";
 var appname = "-Cinema City";
-
-    
   
 
 const routes = [
@@ -35,11 +30,7 @@ const routes = [
       requiresVisitor: true,
 
     },
-    
-    
   },
- 
-
   {
     path: "/Dashboard",
     name: "Dashboard",
@@ -48,7 +39,6 @@ const routes = [
       title: "Dashboard " + appname,
       requiresAuth: true,
     },
-    
   },
   {
     path: "/Time/index",
@@ -58,7 +48,6 @@ const routes = [
       title: "timeindex " + appname,
       requiresAuth: true,
     },
-    
   },
   {
     path: "/Movie/index",
@@ -68,7 +57,6 @@ const routes = [
       title: "movieindex " + appname,
       requiresAuth: true,
     },
-    
   },
   {
     path: "/Role/index",
@@ -78,14 +66,7 @@ const routes = [
       title: "roleindex " + appname,
       requiresAuth: true,
     },
-    
   },
-  // {
-  //   path: '/about',
-  //   name: 'about',
-  //   component: about,
-  //   meta:{title:"about" + appname}
-  // },
   {
     path: '/login',
     name: 'login',
@@ -113,9 +94,6 @@ const routes = [
       requiresAuth: true,
      }
   },
-
-  
-
   // Components based Routes
   {
     path: "/component/alert",
@@ -161,20 +139,4 @@ const router = createRouter({
 
   linkExactActiveClass: "exact-active",
 });
-
-// function nextFactory(context,middleware,index){
-
-// }
-
-// router.beforeEach((to, from, next) => {
-//   if(to.meta.middleware){
-//     const middleware = Array.isArray(to.meta.middleware) ? to.meta.middleware : [to.meta.middleware];
-//     const context = {from , next , router , to};
-//     const nextMiddleware = nextFactory({context, middleware, index : 1});
-//     return middleware[0]({...context,next : nextMiddleware});
-//   }
-//   document.title = to.meta.title;
-//   next();
-// });
-
 export default router;

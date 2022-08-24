@@ -11,7 +11,6 @@ export default {
    props: ['visibleSlide','index','direction',],  
     data(){
         return{
-
         }
     }
 }

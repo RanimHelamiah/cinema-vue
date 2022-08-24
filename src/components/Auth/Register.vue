@@ -1,7 +1,6 @@
 <template>
-
     <div class="register-form bg-gray-300 text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden border border-3 border-purple-900" 
-    style="max-width:1000px">
+       style="max-width:1000px">
         <div class="md:flex w-full">
             <div class="hidden md:block  w-1/2 bg-purple-900 py-10 px-10">
                 <svg id="a87032b8-5b37-4b7e-a4d9-4dbfbe394641" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" viewBox="0 0 744.84799 747.07702"><path id="fa3b9e12-7275-481e-bee9-64fd9595a50d" data-name="Path 1" d="M299.205,705.80851l-6.56-25.872a335.96693,335.96693,0,0,0-35.643-12.788l-.828,12.024-3.358-13.247c-15.021-4.29394-25.24-6.183-25.24-6.183s13.8,52.489,42.754,92.617l33.734,5.926-26.207,3.779a135.92592,135.92592,0,0,0,11.719,12.422c42.115,39.092,89.024,57.028,104.773,40.06s-5.625-62.412-47.74-101.5c-13.056-12.119-29.457-21.844-45.875-29.5Z" transform="translate(-227.576 -76.46149)" fill="#f2f2f2"/><path id="bde08021-c30f-4979-a9d8-cb90b72b5ca2" data-name="Path 2" d="M361.591,677.70647l7.758-25.538a335.93951,335.93951,0,0,0-23.9-29.371l-6.924,9.865,3.972-13.076c-10.641-11.436-18.412-18.335-18.412-18.
@@ -101,10 +100,6 @@
     </div>
 </template>
 
-<!-- <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
- -->
-
 <script>
 import axios from 'axios';
 import { mapActions } from 'vuex';
@@ -126,9 +121,6 @@ export default {
   methods: {
     ...mapActions('auth',['register','UploadImage']),
     saveuser() {
-      // if (this.name.trim().length == 0 || this.email.trim().length == 0 ||this.password.trim().length == 0) {
-      //           return
-      // }
       const user={
        name: this.name,
         email: this.email,
@@ -153,45 +145,10 @@ export default {
         })
 
     },
-    onFileSelected(e){
-      console.log(e)
-      this.id_img = e.target.files[0]; 
-    },
-
-    onUpload(){
-       const fd = new FormData();
-       fd.append('image',this.id_img,this.id_img.name)
-       axios.post("http://127.0.0.1:8000/api/register",fd)
-       .then(response => 
-        console.log(response)
-       )
-
-
-    },
-
-    
-
-    // onUpload(e){
-    //   console.log(e)
-    //   const file = e.files[0];
-    //   console.log(file)
-    //   this.id_img=URL.createObjectURL(file);
-    // },
-    // onFileChange(e){
-    //   console.log(e)
-    //   const file = e.target.files[0];
-    //   this.id_img=URL.createObjectURL(file);
-    //   var imagefile = document.querySelector('id_img');
-    //   console.log(file)
-    //   //console.log(imagefile.files[0])
-    //   let formData = new FormData();
-    //   formData.append("image",file);
-    //   this.$store.dispatch("UploadImage",formData);
-    // }
-    
   }, 
 }
 </script>
+
 <style scoped>
 @import url('https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css')
 </style>

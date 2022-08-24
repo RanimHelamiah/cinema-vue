@@ -1,9 +1,6 @@
 <template>
   <!-- sidebar -->
-  
-  
-  <nav class="sidebar bg-gray-100 dark:bg-purple-800"
-            >
+  <nav class="sidebar bg-gray-100 dark:bg-purple-800">
     <!-- sidebar head -->
     <div class="sidebar-head p-4">
       <router-link to="/" exact>

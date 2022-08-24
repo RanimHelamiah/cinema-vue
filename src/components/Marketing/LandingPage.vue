@@ -26,19 +26,16 @@ export default {
                 '/images/1.jpg',
                 '/images/2.png',
                 '/images/3.jpg',
-
             ],
             
             visibleSlide:0,
             direction:'left',
-
         }
     },
     computed : {
         slideLen(){
             return this.slides.length;
         }
-
     },
     methods : {
         next() {
@@ -67,8 +64,6 @@ export default {
         CarouselSlide,
         
     },
-    
-
 }
 </script>
 

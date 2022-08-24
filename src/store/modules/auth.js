@@ -1,8 +1,5 @@
 import axios from 'axios'
 
-
-//axios.defaults.baseURL = 'http://127.0.0.1:8000/api';
-
 export const auth ={
     namespaced: true,
     state: {
@@ -14,7 +11,6 @@ export const auth ={
         return state.token !== null
 
       },
-      // loggedIn: state => state.token !== null
     },
     mutations: {
       retrieveToken(state, token) {
@@ -30,8 +26,6 @@ export const auth ={
     },
     actions: {
       retrieveToken(context, credentials) {
-
-
         return new Promise((resolve, reject) => {
           axios.post('http://127.0.0.1:8000/api/login', {
             email: credentials.email,
@@ -62,7 +56,6 @@ export const auth ={
             password_confirmation: data.password_confirmation,
             phone: data.phone,
             id_img:data.id_img,
-            
           },
           {
               headers: {
@@ -90,14 +83,8 @@ export const auth ={
           context.commit('deleteItems',payload)
         }
         return result.statusText;
-
-
       },
-
       destroyToken(context) {
-        // if(localStorage.getItem('access_token')){
-        //   localStorage.removeItem('access_token')
-        // }
         axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('access_token')
         if (context.getters.loggedIn) {
             return new Promise((resolve, reject) => {

@@ -12,8 +12,6 @@ import "./assets/tailwind.css";
 import "./assets/animate.css";
 import "./assets/sass/css/windzo.css";
 
-//axios.defaults.baseURL = 'https://127.0.0.1.8000/api'
-
 
 const app = createApp(Master);
 app.use(router, Icon);
@@ -21,8 +19,6 @@ app.use(VueApexCharts);
 app.use(PerfectScrollbar);
 app.use(store);
 app.mount("#app");
-
-
 
 import { auth } from "@/store/modules/auth"
 

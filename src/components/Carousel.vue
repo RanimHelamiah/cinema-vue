@@ -1,8 +1,6 @@
 <template>
     <div class="carousel ">
         <slot></slot>
-
-        
          <button @click="next" class="next" >
             <svg 
             xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +32,6 @@
 export default {
     data(){
         return{
-
         }
     },
     methods : {

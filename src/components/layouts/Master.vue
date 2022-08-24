@@ -17,10 +17,6 @@
               register
             </li>
         </router-link>
-        <!-- <li><router-link :to="{ name: 'todo' }">App</router-link></li>
-        <li><router-link :to="{ name: 'about' }">About</router-link></li>
-        <li v-if="!loggedIn"><router-link :to="{ name: 'login' }">Login</router-link></li> -->
-
       </ul>
       <router-view />
    </div>
@@ -46,14 +42,6 @@ export default {
     LandingPage,
     Register,
 }
-  //  {
-  //   loggedIn() {
-  //     return this.$store.getters.loggedIn;
-  //   },
-  //   mounted() {
-  //       Scrollbar.init(document.querySelector("#body-scroll"))
-  //   }
-  // }
 }
 
 </script>
@@ -141,7 +129,4 @@ export default {
     cursor: pointer;
   
   }
-     
-    
-  
 </style>

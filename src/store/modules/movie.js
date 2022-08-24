@@ -25,8 +25,6 @@ export const movie ={
           },
           delete: (state, movie) => state.movies = state.movies.filter(t => movie.id !== t.id),
       },
-
-
     actions:{
           async index(context) {
               // axios.defaults.headers.common['Authorization'] = 'Bearer ' + context.state.token
