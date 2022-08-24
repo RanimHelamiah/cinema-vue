@@ -43,11 +43,13 @@
                                
                                 <td class="py-3 px-6 text-center">
                                     <div class="flex item-center justify-center">
-                                        <button  class="w-6 mr-2 transform hover:text-purple-300 hover:scale-110">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <router-link :to="{ name: 'timeedit'}">
+                                         <button :key="time.id"  @click="edit(time)" class="w-6 mr-2 transform hover:text-purple-300 hover:scale-110" >
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                                             </svg>
-                                        </button>
+                                         </button>
+                                        </router-link>
                                         <button :key="time.id"
                                             v-if="time.active==1"
                                             @click="deactivated(time)"  class="text-xs text-white bg-sky-600 rounded-full w-6 mr-2 transform
@@ -110,6 +112,20 @@
             console.log(error)
 
         })
+    },
+    edit(time) {
+        console.log(time)
+        
+    // if (this.starttime.trim().length == 0 || this.endtime.trim().length == 0) {
+    //     return
+    // }
+    // const time = {
+    //     id: this.id,
+    //     starttime: this.starttime,
+    //     endtime: this.endtime,
+    //     successMessage :'Time Updated Successfully!',
+    // };
+    // this.update(time);
     },
    },
     created() {

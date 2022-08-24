@@ -33,11 +33,11 @@ export default {
             if (this.starttime.trim().length == 0 || this.endtime.trim().length == 0) {
                 return
             }
-            const project = {
+            const time = {
                 'starttime': this.starttime,
                 'endtime': this.endtime,
             }
-            this.store(project)
+            this.store(time)
             this.starttime=""
             this.endtime=""
             this.successMessage = 'Time Created Successfully!'

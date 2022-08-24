@@ -15,7 +15,9 @@ export const role ={
 
     mutations: {
           index : (state, roles) => state.roles = roles,
-        //   show  : (state.roles) => state.roles.get(role),
+          
+          show: (state, role) => state.roles = state.roles.get(t => role.id == t.id),
+
           store : (state, role) => state.roles.push(role),
           update: (state, role) => {
               const index = state.roles.findIndex(t => t.id === role.id);
@@ -35,13 +37,13 @@ export const role ={
               // console.log(response.data.data.data);
               context.commit('index', response.data.data);
           },
-        //   async show(context, role) {
-        //     axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('access_token')
-        //      const response = await axios.get('/roles'+role.id, role);
-        //      //console.log(response)
-        //      // console.log(response.data.data.data);
-        //      context.commit('show', response.data.data);
-        //  },
+          async show(context, role) {
+            axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('access_token')
+             const response = await axios.get('/roles'+role.id, role);
+             //console.log(response)
+             // console.log(response.data.data.data);
+             context.commit('show', response.data.data);
+         },
           async store( context, role) {
               const response = await axios.post('/roles', role);
               // console.log(response.data.data);
