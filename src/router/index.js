@@ -8,8 +8,9 @@ import Register from "../components/Auth/Register.vue";
 import Dashboard from "../views/Dashboard.vue";
 import timeindex from "../views/Admin/Time/index.vue";
 import timeedit from "../views/Admin/Time/edit.vue";
+import hallindex from "../views/Admin/Hall/index-hall.vue"
 import movieindex from "../views/Admin/Movie/index.vue";
-import roleindex from "../views/Admin/RolePer/index.vue";
+import rolemanager from "../views/Admin/RolePer/rolemanager.vue";
 // Component Pages
 import Valert from "../views/components/alert.vue";
 import Vaccrodion from "../views/components/accordion.vue";
@@ -51,11 +52,21 @@ const routes = [
     },
   },
   {
-    path: "/Time/edit/:time",
+    path: "/Time/edit/:timeid",
     name: "timeedit",
     component: timeedit,
+    props: true,
     meta: { 
       title: "timeedit " + appname,
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/Hall/index",
+    name: "hallindex",
+    component: hallindex,
+    meta: { 
+      title: "hallindex " + appname,
       requiresAuth: true,
     },
   },
@@ -70,10 +81,10 @@ const routes = [
   },
   {
     path: "/Role/index",
-    name: "roleindex",
-    component: roleindex,
+    name: "rolemanager",
+    component: rolemanager,
     meta: { 
-      title: "roleindex " + appname,
+      title: "rolemanager " + appname,
       requiresAuth: true,
     },
   },

@@ -10,7 +10,7 @@
     }"
   >
     <span class="mr-3 text-xl">
-      <slot name="icon"></slot>
+      <slot name="icon">admin</slot>
     </span>
     <span class="w-full">
       <slot name="title" />
