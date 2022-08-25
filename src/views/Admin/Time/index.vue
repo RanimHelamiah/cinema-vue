@@ -1,7 +1,7 @@
 <template>
   <AdminLayout>
     <div class="overflow-x-auto" >
-        <div class="flex m-4 justify-center">
+        <div class="flex m-4 justify-center lg:flex md:flex">
            <createtime />
         </div>
         <div class="min-w-screen min-h-screen bg-gray-100 flex m-4 justify-center bg-gray-100 

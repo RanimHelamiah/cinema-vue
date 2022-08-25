@@ -1,11 +1,19 @@
 <template>
   <AdminLayout>
-    <div class="overflow-x-auto">
-        <div class="min-w-screen min-h-screen bg-gray-100 flex m-4 justify-center bg-gray-100 
-        dark:bg-purple-900 overflow-hidden">
+    <div class="overflow-x-auto ">
+        <div class="flex justify-end bg-gray-100 dark:bg-purple-900 m-4 lg:flex  md:flex ">
+            <router-link to="/Movie/create">
+                <button name="new"  class="bg-purple-200 dark:bg-violet-900 m-4 mr-8 text-3xl text-purple-900 dark:text-purple-200  
+                  font-semibold p-3 border-2 border-purple-900 dark:border-purple-200 rounded-lg 
+                  hover:text-purple-400 outline-none exact ">Add New Movie</button>
+            </router-link>
+        </div>
+        <div class="overflow-x-auto min-w-screen min-h-screen bg-gray-100 flex m-4 justify-center bg-gray-100 
+          dark:bg-purple-900 overflow-hidden lg:flex  md:flex ">
+        
             <div class="w-full lg:w-5/6">
                 <div class="bg-purple-300  dark:bg-purple-800 shadow-md rounded my-6">
-                    <table class="min-w-max w-full table-auto rounded-lg">
+                    <table class="min-w-max w-full table-auto rounded-lg ">
                         <thead>
                             <tr class="bg-violet-900 dark:bg-violet-300  uppercase text-md leading-normal text-purple-200 dark:text-purple-900">
                                 <th class="py-3 px-6 text-left">Name</th>
@@ -34,8 +42,8 @@
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-center">
-                                    <div class="flex items-center justify-center" :key="genre.id" v-for="genre in allgenres">
-			   	                        <div class="mr-2">
+                                    <div class="flex items-center justify-center" v-for="genre in allmovies.genres" :key="genre.id">
+			   	                        <div class="mr-2"  >
                                            {{genre.name}}
                                         </div>
                                     </div>

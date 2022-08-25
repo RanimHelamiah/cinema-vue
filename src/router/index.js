@@ -10,6 +10,7 @@ import timeindex from "../views/Admin/Time/index.vue";
 import timeedit from "../views/Admin/Time/edit.vue";
 import hallindex from "../views/Admin/Hall/index-hall.vue"
 import movieindex from "../views/Admin/Movie/index.vue";
+import createmovie from "../views/Admin/Movie/create-movie.vue";
 import rolemanager from "../views/Admin/RolePer/rolemanager.vue";
 // Component Pages
 import Valert from "../views/components/alert.vue";
@@ -76,6 +77,15 @@ const routes = [
     component: movieindex,
     meta: { 
       title: "movieindex " + appname,
+      requiresAuth: true,
+    },
+  },
+  {
+    path: "/Movie/create",
+    name: "createmovie",
+    component: createmovie,
+    meta: { 
+      title: "createmovie " + appname,
       requiresAuth: true,
     },
   },
