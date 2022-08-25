@@ -33,9 +33,10 @@ export const movie ={
       },
     actions:{
           async index(context) {
+            this.loading = true;
             axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('access_token')
               const response = await axios.get('/Movie');
-              // console.log(response.data.data.data);
+               //console.log(response.data.data.data);
               context.commit('index', response.data.data.data);
           },
           async store( context, movie) {

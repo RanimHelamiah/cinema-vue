@@ -42,7 +42,7 @@
           <input
             type="text"
             placeholder="Search..."
-            class="p-3 w-full bg-white dark:bg-violet-900 rounded-md outline-none focus:bg-purple-100 text-purple-900 dark:focus:bg-purple-700"
+            class="p-3 w-full bg-white dark:bg-violet-900 rounded-md outline-none focus:bg-purple-200 text-purple-900 dark:focus:bg-purple-700"
            />
         </div>
         <button
