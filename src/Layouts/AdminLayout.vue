@@ -23,7 +23,6 @@
   import Footer from "@/components/Footer";
   import Dashboard from "@/views/Dashboard";
   import timeindex from "@/views/Admin/Time/index.vue";
-  import movieindex from "@/views/Admin/Movie/index.vue";
   // npm-js
   import Scrollbar from "smooth-scrollbar";
   export default {
@@ -35,7 +34,6 @@
       Sidebar,
       Dashboard,
       timeindex,
-      movieindex,
     },
 
     mounted() {

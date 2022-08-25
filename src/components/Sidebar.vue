@@ -103,7 +103,7 @@
         </router-link>
       </div>
       <div class="item mt-3">
-        <router-link to="/">
+        <router-link to="/Hall/index">
           <button
             class="text-purple-800 dark:text-gray-100 bg-transparent hover:bg-purple-100 dark:hover:bg-violet-500 w-full flex text-left rounded-md box-border p-3"
           >

@@ -12,6 +12,7 @@ import { auth } from "./modules/auth"
 import { time } from "./modules/time"
 import { movie } from "./modules/movie"
 import { role } from "./modules/role"
+import { hall } from "./modules/hall"
 //Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -19,6 +20,7 @@ export default new Vuex.Store({
     project,
     auth,
     role,
+    hall,
     time,
     movie,
   },

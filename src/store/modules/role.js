@@ -10,11 +10,11 @@ export const role ={
       },
 
       getters: {
-        allroles: state => state.roles
+        allroles: state => state.roles 
       },
 
     mutations: {
-          index : (state, roles) => state.roles = roles,
+          index : (state, roles) => state.roles = roles ,
           
           show: (state, role) => state.roles = state.roles.get(t => role.id == t.id),
 
