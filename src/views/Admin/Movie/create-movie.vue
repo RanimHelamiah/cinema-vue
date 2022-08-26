@@ -54,23 +54,20 @@
 		        </div>
                     
                 <div class="relative z-0 mb-6 w-full group">
-		          <select name="showing_type" id="showing_type"
+		          <select name="starttime" id="starttime" multiple="multiple"
                    class="block py-2.5 px-0 w-full text-md text-purple-900 dark:text-purple-200 
                    dark:bg-purple-900 bg-transparent
                    border-0 border-b-2 border-purple-300 appearance-none dark:text-white 
                    dark:border-purple-600 dark:focus:border-violet-500 focus:outline-none
-                   focus:ring-0 focus:border-violet-600 peer" placeholder=" " required >
-		         	<option value selected disabled>Select showing_type</option>
-                    <option>
-                       Now Showing
-                    </option>
-                    <option>
-                       Up Coming
+                   focus:ring-0 focus:border-violet-600 peer"  required >
+		         	<option value selected disabled>Select Starttime</option>
+                    <option   v-for="time in times" :key="time.id" value="{{time.id}}">
+                       {{ time.starttime}}
                     </option>
                  </select>
 		        </div>
                 <div class="relative z-0 mb-6 w-full group">
-		          <select name="genre" id="genre"
+		          <select name="genre" id="genre" multiple="multiple"
                    class="block py-2.5 px-0 w-full text-md text-purple-900 dark:text-purple-200 
                    dark:bg-purple-900 bg-transparent
                    border-0 border-b-2 border-purple-300 appearance-none dark:text-white 
@@ -93,17 +90,20 @@
                     <input type="date"  name="to" id="to" class="block py-2.5 px-0 w-full text-md text-purple-900 bg-transparent border-0 border-b-2 border-purple-300 appearance-none dark:text-white dark:border-purple-600 dark:focus:border-violet-500 focus:outline-none focus:ring-0 focus:border-violet-600 peer"  required />
                 </div>
                 <div class="relative z-0 mb-6 w-full group">
-		          <select name="starttime" id="starttime"
+                  <select name="showing_type" id="showing_type"
                    class="block py-2.5 px-0 w-full text-md text-purple-900 dark:text-purple-200 
                    dark:bg-purple-900 bg-transparent
                    border-0 border-b-2 border-purple-300 appearance-none dark:text-white 
                    dark:border-purple-600 dark:focus:border-violet-500 focus:outline-none
-                   focus:ring-0 focus:border-violet-600 peer"  required >
-		         	<option value selected disabled>Select Starttime</option>
-                    <option   v-for="time in times" :key="time.id" value="{{time.id}}">
-                       {{ time.starttime}}
+                   focus:ring-0 focus:border-violet-600 peer" placeholder=" " required >
+		         	<option value selected disabled>Select showing_type</option>
+                    <option>
+                       Now Showing
                     </option>
-                 </select>
+                    <option>
+                       Up Coming
+                    </option>
+                   </select>
 		        </div> 
                 <div class="flex justify-end ">
                  <button type="submit" class="mt-8 mr-8 text-white bg-violet-700 hover:bg-violet-800 

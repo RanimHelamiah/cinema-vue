@@ -50,7 +50,7 @@
                                 </td>
                                 <td class="py-3 px-6 text-center">
                                     <div class="flex items-center justify-center">
-                                        {{movie.hall_id}}
+                                        {{movie.hall.name}}
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-center">
