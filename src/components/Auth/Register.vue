@@ -119,7 +119,7 @@ export default {
   },
   
   methods: {
-    ...mapActions('auth',['register','UploadImage']),
+    ...mapActions('auth',['register']),
     saveuser() {
       const user={
        name: this.name,

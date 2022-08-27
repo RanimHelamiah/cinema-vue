@@ -7,18 +7,24 @@ export const movie ={
     namespaced: true,
     state: {
         movies:[],
-        movie:Object,
+        // movie:Object,
+        // genres:Object,
+        // hallss:Object,
+        // times:Object,
         signedin:localStorage.getItem('access_token')?true:false
        },
 
       getters: {
         allmovies: state => state.movies,
-        allgenres:state =>state.genres,
+        allgenres:state =>state.movies.genres,
+        alltimes:state=>state.movies.times,
+        allhalls:state=>state.movies.halls,
         showmovie: state => state.movie
       },
 
     mutations: {
           index : (state, movies) => state.movies = movies,
+          create : (state,movies) => state.movies = movies,
           store : (state, movie) => state.movies.push(movie),
           show: (state, movie) => {
             state.movie = movie;
@@ -39,15 +45,30 @@ export const movie ={
                //console.log(response.data.data.data);
               context.commit('index', response.data.data.data);
           },
-          async store( context, movie) {
+          async create(context) {
             axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('access_token')
-              const response = await axios.post('/Movie', movie);
-              // console.log(response.data.data);
+              const response = await axios.get('/Movie/create');
+             //  console.log(response.data.data);
+              context.commit('create', response.data.data);
+          },
+          async store( context, movie) {
+            // console.log(movie);
+            axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('access_token')
+              const response = await axios.post('/Movie', movie,
+                {
+                  headers: {
+                      'Content-Type': 'multipart/form-data'
+                  }
+                }).catch(error => {
+                  console.log(error.response)
+                });
+              console.log(response.data.data);
               context.commit('store', response.data.data);
+              
           },
           async show( context, movie) {
             axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('access_token')
-            const response = await axios.get('movie/'+movieid);
+            const response = await axios.get('Movie/'+movieid);
             // console.log(response.data.data);
             context.commit('edit', response.data.data);
           },

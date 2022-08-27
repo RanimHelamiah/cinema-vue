@@ -74,16 +74,6 @@ export const auth ={
 
         })
       },
-
-      async UploadImage(context, payload){
-        var result = await common.post("http://127.0.0.1:8000/api/register" ,
-         payload,{headers:{'content_Type':"multipart/form_data"}})
-        console.log(result)
-        if(result.data>0){
-          context.commit('deleteItems',payload)
-        }
-        return result.statusText;
-      },
       destroyToken(context) {
         axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('access_token')
         if (context.getters.loggedIn) {
